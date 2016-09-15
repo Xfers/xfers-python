@@ -22,9 +22,9 @@ def handle_api_error(msg, status_code):
         raise XfersError(msg, status_code)
 
 
-def get(resource_url, connect_key):
+def get(params, resource_url, connect_key):
     url = xfers.api_base + resource_url
-    r = requests.get(url, headers=create_auth_headers(connect_key))
+    r = requests.get(url, headers=create_auth_headers(connect_key), params=params)
     if r.status_code != 200:
         handle_api_error(r.text, r.status_code)
     return json.loads(r.text)
