@@ -1,0 +1,11 @@
+/.eggs
+/build
+/dist
+/MANIFEST
+/stripe.egg-info
+.python-version
+*.pyc
+*.egg
+*.class
+.idea
+.DS_Store
