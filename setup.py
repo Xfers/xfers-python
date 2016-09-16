@@ -24,23 +24,13 @@ if sys.version_info < (2, 6):
         'contact us at support@xfers.io.',
         DeprecationWarning)
     install_requires.append('requests >= 0.8.8, < 0.10.1')
-    install_requires.append('ssl')
 else:
-    install_requires.append('requests >= 0.8.8')
-
+    install_requires.append('requests >= 2.11.1')
 
 # Don't import xfers module here, since deps may not be installed
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'xfers'))
 version_file = open(os.path.join(os.path.dirname(__file__), 'VERSION'))
 VERSION = version_file.read().strip()
-
-# Get simplejson if we don't already have json
-# if sys.version_info < (3, 0):
-#     try:
-#         from util import json
-#     except ImportError:
-#         install_requires.append('simplejson')
-
 
 setup(
     name='xfers',

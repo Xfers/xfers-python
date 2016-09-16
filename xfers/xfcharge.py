@@ -30,7 +30,7 @@ def refund(charge_id, connect_key=None):
 
 def validate(charge_id, params, connect_key=None):
     if not charge_id:
-        raise error.InvalidRequestError("Transaction id cannot be empty", 400)
+        raise error.InvalidRequestError("Charge id cannot be empty", 400)
     return api_resource.post(params, '{}/{}/validate'.format(RESOURCE_URL, charge_id), connect_key)
 
 

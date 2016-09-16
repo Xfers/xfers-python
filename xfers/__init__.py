@@ -3,14 +3,10 @@
 
 # Configuration variables
 
-# import xfers.user
-
 api_key = None
 api_base = ''
 
-# SG_SANDBOX_BASE = 'https://sandbox.xfers.io/api/v3'
-SG_SANDBOX_BASE = 'http://localhost:3000/api/v3'
-
+SG_SANDBOX_BASE = 'https://sandbox.xfers.io/api/v3'
 SG_PRODUCTION_BASE = 'https://www.xfers.io/api/v3'
 ID_SANDBOX_BASE = 'https://sandbox-id.xfers.com/api/v3'
 ID_PRODUCTION_BASE = 'https://id.xfers.com/api/v3'
