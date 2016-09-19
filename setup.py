@@ -29,13 +29,11 @@ else:
 
 # Don't import xfers module here, since deps may not be installed
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'xfers'))
-version_file = open(os.path.join(os.path.dirname(__file__), 'VERSION'))
-VERSION = version_file.read().strip()
 
 setup(
     name='xfers',
     cmdclass={'build_py': build_py},
-    version=VERSION,
+    version='1.0.1',
     description='Xfers python bindings',
     author='Xfers',
     author_email='support@xfers.io',
