@@ -8,3 +8,4 @@
 *.class
 .idea
 .DS_Store
+xfers.egg-info

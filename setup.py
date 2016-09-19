@@ -41,5 +41,18 @@ setup(
     author_email='support@xfers.io',
     url='https://github.com/Xfers/xfers-python',
     packages=['xfers'],
-    install_requires=install_requires
+    install_requires=install_requires,
+    keywords=['payments', 'xfers'],
+    license='MIT',
+    classifiers=[
+        "Intended Audience :: Developers",
+        "License :: OSI Approved :: MIT License",
+        "Operating System :: OS Independent",
+        "Programming Language :: Python",
+        "Programming Language :: Python :: 2",
+        "Programming Language :: Python :: 2.6",
+        "Programming Language :: Python :: 2.7",
+        "Programming Language :: Python :: Implementation :: PyPy",
+        "Topic :: Software Development :: Libraries :: Python Modules"
+    ]
 )
