@@ -25,7 +25,7 @@ if sys.version_info < (2, 6):
         DeprecationWarning)
     install_requires.append('requests >= 0.8.8, < 0.10.1')
 else:
-    install_requires.append('requests >= 2.11.1')
+    install_requires.append('requests >= 2.5.4')
 
 # Don't import xfers module here, since deps may not be installed
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'xfers'))
@@ -33,7 +33,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'xfers'))
 setup(
     name='xfers',
     cmdclass={'build_py': build_py},
-    version='1.0.1',
+    version='1.0.3',
     description='Xfers python bindings',
     author='Xfers',
     author_email='support@xfers.io',
