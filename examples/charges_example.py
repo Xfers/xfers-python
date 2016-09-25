@@ -1,8 +1,9 @@
 import xfers
 from xfers import xfcharge
 from xfers import error
+import json
 
-xfers.api_key = 'G-zsfAEScrqdU8GhWTEdjfdnb3XRdU8q1fH-nuWfSzo'
+xfers.api_key = 'dLyFBBNxQx5bQzeyjyUbibapmnD5xEcNB5MoZdx9Kow'
 xfers.set_sg_sandbox()
 
 charge_id = ''
@@ -21,11 +22,20 @@ except error.XfersError as e:
 
 try:
     print 'Creating charge...'
+    items = [{'description': 'Red dress size M', 'price': '9.99', 'quantity': '1', 'name': 'Red dress'}]
+    meta_data = {'firstname': 'Tianwei', 'lastname': 'Liu'}
     params = {
-        'amount': '19.99',
-        'currency': 'SGD',
-        'order_id': 'A01231z2',
-        'description': 'Carousell user - Konsolidate'
+        'amount' : '9.99',
+        'currency' : 'SGD',
+        'notify_url' : 'https://mysite.com/payment_notification',
+        'return_url' : 'https://mysite.com/return',
+        'cancel_url' : 'https://mysite.com/cancel',
+        'order_id' : 'your-order-id',
+        'description' : 'unused red dress',
+        'shipping' : '2.50',
+        'tax' : '0.0',
+        'items' : json.dumps(items),
+        'meta_data' : json.dumps(meta_data)
     }
     resp = xfcharge.create(params)
     charge_id = resp['id']
