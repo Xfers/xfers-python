@@ -5,7 +5,7 @@ from xfers import error
 RESOURCE_URL = '/intents'
 
 
-def list_all(connect_key=None):
+def retrieve(connect_key=None):
     return api_resource.get(None, RESOURCE_URL, connect_key)
 
 

@@ -26,7 +26,7 @@ except error.XfersError as e:
 
 try:
     print 'Current intent...'
-    intent = xfintent.list_all()
+    intent = xfintent.retrieve()
     print 'Intent: {}'.format(intent)
 except error.XfersError as e:
     print str(e)
