@@ -18,7 +18,6 @@ def list_all(params=None, connect_key=None):
 def create(params, connect_key=None):
     if not params:
         raise error.InvalidRequestError("Params cannot be empty", 400)
-    params['redirect'] = 'false'
     return api_resource.post(params, RESOURCE_URL, connect_key)
 
 

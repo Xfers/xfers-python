@@ -25,6 +25,7 @@ try:
     items = [{'description': 'Red dress size M', 'price': '9.99', 'quantity': '1', 'name': 'Red dress'}]
     meta_data = {'firstname': 'Tianwei', 'lastname': 'Liu'}
     params = {
+        'redirect': 'false',
         'amount' : '9.99',
         'currency' : 'SGD',
         'notify_url' : 'https://mysite.com/payment_notification',
