@@ -33,7 +33,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'xfers'))
 setup(
     name='xfers',
     cmdclass={'build_py': build_py},
-    version='1.0.3',
+    version='1.1.0',
     description='Xfers python bindings',
     author='Xfers',
     author_email='support@xfers.io',
