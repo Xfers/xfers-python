@@ -46,9 +46,9 @@ def put(params, resource_url, connect_key):
     return json.loads(r.text)
 
 
-def delete(resource_url, connect_key):
+def delete(resource_url, connect_key, params=None):
     url = xfers.api_base + resource_url
-    r = requests.delete(url, headers=create_auth_headers(connect_key))
+    r = requests.delete(url, headers=create_auth_headers(connect_key), data=params)
     if r.status_code != 200:
         handle_api_error(r.text, r.status_code)
     return json.loads(r.text)
