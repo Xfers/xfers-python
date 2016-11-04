@@ -3,7 +3,7 @@ from xfers import xfcharge
 from xfers import error
 import json
 
-xfers.api_key = 'dLyFBBNxQx5bQzeyjyUbibapmnD5xEcNB5MoZdx9Kow'
+xfers.api_key = 'WuTp3zM7UEpmUkeAyGPxRHmnXAx-hXJ7jzdqmxY6S1o'
 xfers.set_sg_sandbox()
 
 charge_id = ''
@@ -77,17 +77,18 @@ except error.XfersError as e:
 
 try:
     charge_id = 'your-charge-id'
-    print 'Settling charge {}...'.format(charge_id)
-    resp = xfcharge.settle(charge_id, '512312')
-    print resp
-except error.XfersError as e:
-    print str(e)
-
-
-try:
-    charge_id = 'your-charge-id'
     print 'Refunding charge {}...'.format(charge_id)
     resp = xfcharge.refund(charge_id)
     print resp
 except error.XfersError as e:
     print str(e)
+
+try:
+    charge_id = '0e140a1c251e48939d49651b57394737'
+    auth_code = '123049'
+    print 'Authorizing charge...'
+    resp = xfcharge.authorize(charge_id, auth_code)
+    print resp
+except error.XfersError as e:
+    print str(e)
+

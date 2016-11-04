@@ -39,10 +39,11 @@ def cancel(charge_id, connect_key=None):
     return api_resource.post(None, '{}/{}/cancel'.format(RESOURCE_URL, charge_id), connect_key)
 
 
-def settle(charge_id, settlement_code=None, connect_key=None):
+def authorize(charge_id, auth_code):
     if not charge_id:
         raise error.InvalidRequestError("Charge id cannot be empty", 400)
-    params = None
-    if settlement_code:
-        params = {'settlement_code': settlement_code}
-    return api_resource.post(params, '{}/{}'.format(RESOURCE_URL, charge_id), connect_key)
+    if not auth_code:
+        raise error.InvalidRequestError("auth_code cannot be empty", 400)
+
+    params = {'auth_code': auth_code}
+    return api_resource.post(params, '{}/{}/authorize'.format(RESOURCE_URL, charge_id), None)
